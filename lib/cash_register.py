@@ -14,4 +14,13 @@ class CashRegister:
     @property
     def discount(self):
       return self._discount
+    
+    @discount.setter
+    def discount(self, discount):
+      if isinstance(discount, int) and 0 <= discount <= 100:
+        self.dicount = discount
+      else:
+        print("Not valid discount")
+        self._discount = 0
+ 
   pass
