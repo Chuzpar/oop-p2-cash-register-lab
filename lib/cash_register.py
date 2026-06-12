@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
   
 
-from itertools import count
-
-
 class CashRegister:
   def __init__(self, discount=0):
     self.total = 0
@@ -11,14 +8,14 @@ class CashRegister:
     self.previous_transactions = []
     self.discount = discount 
   
-    @property
-    def discount(self):
+  @property
+  def discount(self):
       return self._discount
     
-    @discount.setter
-    def discount(self, discount):
+  @discount.setter
+  def discount(self, discount):
       if isinstance(discount, int) and 0 <= discount <= 100:
-        self.dicount = discount
+        self._discount = discount
       else:
         print("Not valid discount")
         self._discount = 0
@@ -53,7 +50,7 @@ class CashRegister:
 
     if item in self.items:
       self.items.remove(item)
-      
+
 
     
   pass
