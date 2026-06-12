@@ -26,6 +26,14 @@ class CashRegister:
     self.total += price * quantity
     self.items.append(item)
 
+    transaction = {
+      "item": item,
+      "price": price,
+      "quantity": quantity
+    }
+    self.previous_transactions.append(transaction)
+
+    
 
     
   pass
