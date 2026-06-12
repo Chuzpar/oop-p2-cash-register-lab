@@ -38,6 +38,22 @@ class CashRegister:
       print("There is no discount to apply.")
     return
     self.total = self.total - (self.total * self.discount / 100)
+  
+  def void_last_transaction(self):
+    if len(self.previous_transactions) == 0:
+      return 
+    
+    last_transaction = self.previous_transactions.pop()
+
+    item = last_transaction["item"]
+    price = last_transaction["price"]
+    quantity = last_transaction["quantity"]
+
+    self.total -= price * quantity
+
+    if item in self.items:
+      self.items.remove(item)
+      
 
     
   pass
