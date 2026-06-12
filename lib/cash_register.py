@@ -33,7 +33,11 @@ class CashRegister:
     }
     self.previous_transactions.append(transaction)
 
-    
+  def apply_discount(self):
+    if len(self.previous_transactions) == 0:
+      print("There is no discount to apply.")
+    return
+    self.total = self.total - (self.total * self.discount / 100)
 
     
   pass
