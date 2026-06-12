@@ -11,5 +11,7 @@ class CashRegister:
     self.previous_transactions = []
     self.discount = discount 
   
-    
+    @property
+    def discount(self):
+      return self._discount
   pass
